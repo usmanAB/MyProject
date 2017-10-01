@@ -24,8 +24,111 @@
         android:text="@string/prenom"
         />
     <EditText
+        android:id="@+id/editable_prenom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/gender"
+        />
+    <RadioGroup
+        android:id="@+id/rg1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton android:id="@+id/radio_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Homme"
+            android:layout_marginRight="18dp"
+            android:onClick="onRadioButtonClick"
+            />
+        <RadioButton android:id="@+id/radio_f"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Femme"
+            />
+        </RadioGroup>
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/mail"
+        />
+    <EditText
+        android:id="@+id/editable_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/age"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/editAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+
+            />
+        <SeekBar
+            android:id="@+id/levelSeek"
+            android:layout_marginTop="16dp"
+            android:layout_width="200dp"
+            android:layout_marginLeft="100dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
+            />
+
+
+    </RelativeLayout>
+
+<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/level"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Débutant"
+        android:textSize="16dp"
+        android:textColor="#000000"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Actif"
+        />
+    <!--
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+-->
+    <Switch
+        android:id="@+id/sampleSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showText="false"
+        android:padding="15dp"
         />
 
     <Button
@@ -33,5 +136,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/strings"/>
+
 
 </LinearLayout>

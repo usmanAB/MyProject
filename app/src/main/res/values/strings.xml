@@ -3,4 +3,10 @@
     <string name="nom">Nom</string>
     <string name="prenom">Prenom</string>
     <string name="strings">AJOUTER</string>
+    <string name="gender">Sexe</string>
+    <string name="Homme">Homme</string>
+    <string name="Femme">Femme</string>
+    <string name="mail">Mail</string>
+    <string name="level">Niveau</string>
+    <string name="age">Age</string>
 </resources>
