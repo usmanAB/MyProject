@@ -1,8 +1,10 @@
 package com.example.usman.myproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         levelSeek.setOnSeekBarChangeListener(new AgeListener(levelSeek, editAge));
     }
 
+
     public void onAddButtonClick(View view) {
         String lastname = lastnameEditText.getText().toString();
         String firstname = firstNameEditText.getText().toString();
@@ -82,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG,"Age = "+levelSeek.getProgress());
         Log.d(TAG,"Actif  = "+s.getId());
+
+        Intent appel = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(appel);
+
+
+
     }
     public void onRadioButtonClick(View view) {
         int radio = Log.d(TAG, "onRadioButtonClick() called with: view = [" + view + "]");
