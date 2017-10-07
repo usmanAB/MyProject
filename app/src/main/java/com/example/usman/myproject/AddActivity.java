@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -14,21 +12,18 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-public class MainActivity extends AppCompatActivity {
+public class AddActivity extends AppCompatActivity {
 
     private EditText lastnameEditText, firstNameEditText, mailEditText;
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "AddActivity";
     private RadioGroup rg1;
     private RadioGroup rg2;
     private ListView mylist;
     private Switch s;
     private SeekBar levelSeek;
     private int age;
-    private TextView editAge;
+    private TextView labelAge;
 
     private int progressChangedValue = 0;
     private String[] prenoms = new String[]{
@@ -49,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
         rg1 = (RadioGroup) findViewById(R.id.rg1);
        // mylist = (ListView) findViewById(R.id.listView);
 
-        //final ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1,prenoms);
+        //final ArrayAdapter<String> adapter = new ArrayAdapter<String>(AddActivity.this,android.R.layout.simple_list_item_1,prenoms);
         //mylist.setAdapter(adapter);
-        editAge = (TextView) findViewById(R.id.editAge);
+        labelAge = (TextView) findViewById(R.id.editAge);
 
         s = (Switch) findViewById(R.id.sampleSwitch);
         s.setTextOn("Oui");
@@ -61,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
         //editAge.setText(levelSeek.getProgress());
 
-        editAge.setText("toto");
+        labelAge.setText(String.valueOf(levelSeek.getProgress()));
 
-        levelSeek.setOnSeekBarChangeListener(new AgeListener(levelSeek, editAge));
+        levelSeek.setOnSeekBarChangeListener(new AgeListener(levelSeek, labelAge));
     }
 
 
@@ -86,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,"Age = "+levelSeek.getProgress());
         Log.d(TAG,"Actif  = "+s.getId());
 
-        Intent appel = new Intent(MainActivity.this, SecondActivity.class);
+        Intent appel = new Intent(AddActivity.this, SecondActivity.class);
         startActivity(appel);
 
 

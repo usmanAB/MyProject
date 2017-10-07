@@ -24,4 +24,8 @@
         completions."
     </string>
     <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="add_client_button">Ajouter client</string>
+    <string name="list_client">Liste clients</string>
+    <string name="title_activity_details">activityDetails</string>
 </resources>

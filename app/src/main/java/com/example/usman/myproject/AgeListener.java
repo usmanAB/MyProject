@@ -28,6 +28,7 @@ public class AgeListener implements SeekBar.OnSeekBarChangeListener {
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         progressChangedValue = progress;
         Log.d(TAG,"Age = "+progressChangedValue);
+        text.setText(String.valueOf(progressChangedValue));
     }
 
     public void onStartTrackingTouch(SeekBar seekBar) {
