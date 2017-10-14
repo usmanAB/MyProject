@@ -31,7 +31,7 @@
         </activity>
         <activity android:name=".ListClientActivity" />
         <activity
-            android:name=".activityDetails"
+            android:name=".DetailsActivity"
             android:label="@string/title_activity_details"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

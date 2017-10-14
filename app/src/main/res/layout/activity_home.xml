@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.usman.myproject.HomeActivity">
+    tools:context="com.example.usman.myproject.HomeActivity"
+    android:orientation="vertical">
 
     <Button
         android:onClick="onAddButtonClick"
@@ -12,13 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-<!--
+
     <Button
         android:onClick="onListButtonClick"
         android:text="@string/list_client"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
--->
+
 
 </LinearLayout>

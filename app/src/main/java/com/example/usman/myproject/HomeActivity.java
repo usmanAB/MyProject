@@ -19,15 +19,13 @@ public class HomeActivity extends AppCompatActivity {
 
 
     public void onAddButtonClick(View view) {
-        Intent appel =new Intent(HomeActivity.this,ListClientActivity.class);
-        startActivity(appel);
+
     }
 
+    public void onListButtonClick(View view) {
+        Intent appel =new Intent(HomeActivity.this,ListClientActivity.class);
+        startActivity(appel);
 
-    public void Back(View v) {
-        //pour retourner a l’activite principale il suffit seulement d’appler la methode finish() qui vas tuer cette activite
-
-        finish() ;
 
     }
 }
