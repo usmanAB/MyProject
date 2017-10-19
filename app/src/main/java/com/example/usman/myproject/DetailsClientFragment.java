@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 
 import java.util.Date;
 
-public class DetailsActivity extends Fragment {
+public class DetailsClientFragment extends Fragment {
 
     private TextView nom, prenom, birthdate;
 

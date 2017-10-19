@@ -30,10 +30,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetailsActivity"
+            android:name=".DetailsClientFragment"
             android:label="@string/title_activity_details"
             android:theme="@style/AppTheme" />
-        <activity android:name=".DetailsClient"></activity>
+        <activity android:name=".DetailsClientActivity"></activity>
     </application>
 
 </manifest>

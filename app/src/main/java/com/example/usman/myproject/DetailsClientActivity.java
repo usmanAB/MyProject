@@ -3,7 +3,7 @@ package com.example.usman.myproject;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class DetailsClient extends AppCompatActivity {
+public class DetailsClientActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -33,7 +33,7 @@ public class ListClientFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Intent intent = new Intent(getActivity(),DetailsActivity.class);
+        Intent intent = new Intent(getActivity(),DetailsClientActivity.class);
         intent.putExtra(ID_CLIENT,position);
         startActivity(intent);
     }
