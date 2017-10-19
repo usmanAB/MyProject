@@ -1,10 +1,14 @@
 package com.example.usman.myproject;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -12,6 +16,12 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.example.usman.myproject.model.Client;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class AddActivity extends AppCompatActivity {
 
@@ -22,8 +32,11 @@ public class AddActivity extends AppCompatActivity {
     private ListView mylist;
     private Switch s;
     private SeekBar levelSeek;
-    private int age;
+    private Date age;
     private TextView labelAge;
+    private Button addDateButton;
+    private Calendar calendar;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     private int progressChangedValue = 0;
     private String[] prenoms = new String[]{
@@ -37,13 +50,13 @@ public class AddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_add);
         lastnameEditText = (EditText) findViewById(R.id.editable_name);
         firstNameEditText = (EditText) findViewById(R.id.editable_prenom);
         mailEditText = (EditText) findViewById(R.id.editable_mail);
         rg1 = (RadioGroup) findViewById(R.id.rg1);
        // mylist = (ListView) findViewById(R.id.listView);
-
+        addDateButton = (Button) findViewById(R.id.addDateButton);
         //final ArrayAdapter<String> adapter = new ArrayAdapter<String>(AddActivity.this,android.R.layout.simple_list_item_1,prenoms);
         //mylist.setAdapter(adapter);
         labelAge = (TextView) findViewById(R.id.editAge);
@@ -59,6 +72,9 @@ public class AddActivity extends AppCompatActivity {
         labelAge.setText(String.valueOf(levelSeek.getProgress()));
 
         levelSeek.setOnSeekBarChangeListener(new AgeListener(levelSeek, labelAge));
+
+        calendar = Calendar.getInstance();
+
     }
 
 
@@ -81,10 +97,14 @@ public class AddActivity extends AppCompatActivity {
         Log.d(TAG,"Age = "+levelSeek.getProgress());
         Log.d(TAG,"Actif  = "+s.getId());
 
-        Intent appel = new Intent(AddActivity.this, SecondActivity.class);
+        Intent appel = new Intent(AddActivity.this, HomeActivity.class);
         startActivity(appel);
 
 
+        Client c = new Client();
+        c.setLastname(lastname);
+        c.setAge(calendar.getTime());
+        Client.setClient(c);
 
     }
     public void onRadioButtonClick(View view) {
@@ -92,4 +112,21 @@ public class AddActivity extends AppCompatActivity {
         boolean checked = ((RadioButton) view).isChecked();
     }
 
+    public void onAddDateButtonClick(View view) {
+        DatePickerDialog dialog;
+        dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                calendar = Calendar.getInstance();
+                calendar.set(calendar.YEAR,year);
+                calendar.set(calendar.MONTH,month);
+                calendar.set(calendar.DAY_OF_MONTH,day);
+                String date = dateFormat.format(calendar.getTime());
+                addDateButton.setText(date);
+            }
+        }, calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_WEEK));
+        dialog.show();
+
+
+    }
 }

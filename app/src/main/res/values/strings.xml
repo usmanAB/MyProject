@@ -28,4 +28,5 @@
     <string name="add_client_button">Ajouter client</string>
     <string name="list_client">Liste clients</string>
     <string name="title_activity_details">activityDetails</string>
+    <string name="add_date">Ajouter date</string>
 </resources>

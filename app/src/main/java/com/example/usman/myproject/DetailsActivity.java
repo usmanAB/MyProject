@@ -1,27 +1,44 @@
 package com.example.usman.myproject;
 
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.usman.myproject.model.Client;
 
-public class DetailsActivity extends AppCompatActivity {
+import org.w3c.dom.Text;
 
+import java.util.Date;
+
+public class DetailsActivity extends Fragment {
+
+    private TextView nom, prenom, birthdate;
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details);
-        Intent intent = getIntent();
-        int id = intent.getIntExtra(ListClientActivity.ID_CLIENT,0);
-        Client client = Client.getClient().get(id);
-        TextView tw = (TextView) findViewById(R.id.tw);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_details,container,true);
+        nom = view.findViewById(R.id.nomClient);
+        prenom = view.findViewById(R.id.nomClient);
+        birthdate = view.findViewById(R.id.naissanceClient);
 
-        tw.setText(client.getLastname());
+        return view;
+    }
+
+
+    public void updateClient(int id){
+        Client client = Client.getClient().get(id);
+        String name = client.getLastname();
+        nom.setText(name);
+        Date birthdate = client.getAge();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
     }
 }

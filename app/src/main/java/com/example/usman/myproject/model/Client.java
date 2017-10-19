@@ -1,6 +1,8 @@
 package com.example.usman.myproject.model;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -9,16 +11,20 @@ import java.util.List;
 
 public class Client {
 
+    public Client() {
+    }
+
     private enum Gender{
         MAN,WOMAN
     }
 
     private static List<Client> clients;
     static{
+
         clients = new ArrayList<>();
         for (int i=0;i<20;i++){
             Client client = new Client(
-                    "nom"+i,"prenom"+i,"email"+i,20+i,
+                    "nom"+i,"prenom"+i,"email"+i,new Date(),
                     i%3==0 ? Gender.MAN : Gender.WOMAN,"Debutant",true
             );
             clients.add(client);
@@ -29,16 +35,21 @@ public class Client {
         return clients;
     }
 
+    public static void setClient(Client c){
+        clients.add(c);
+    }
+
+
     private String lastname;
     private String firstname;
     private String email;
-    private int age;
+    private Date age;
     private Gender gender;
     private String level;
     private boolean active;
 
 
-    public Client(String lastname, String firstname, String email, int age, Gender gender, String level, boolean active) {
+    public Client(String lastname, String firstname, String email, Date age, Gender gender, String level, boolean active) {
         this.lastname = lastname;
         this.firstname = firstname;
         this.email = email;
@@ -74,11 +85,11 @@ public class Client {
         this.email = email;
     }
 
-    public int getAge() {
+    public Date getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Date age) {
         this.age = age;
     }
 

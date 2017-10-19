@@ -94,6 +94,12 @@
             android:progress="50"
             />
 
+        <Button
+            android:onClick="onAddDateButtonClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/addDateButton"
+            android:text="@string/add_date"/>
 
     </RelativeLayout>
 
