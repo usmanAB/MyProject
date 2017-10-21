@@ -29,4 +29,6 @@
     <string name="list_client">Liste clients</string>
     <string name="title_activity_details">activityDetails</string>
     <string name="add_date">Ajouter date</string>
+    <string name="lastname">Lastname</string>
+    <string name="firstname">firstname</string>
 </resources>

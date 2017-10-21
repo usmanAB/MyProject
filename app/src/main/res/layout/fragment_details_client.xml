@@ -8,14 +8,16 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/nom"
+        android:id="@+id/name_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/lastname"
         />
     <TextView
         android:id="@+id/prenom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/firstname"
         />
     <TextView
         android:id="@+id/naissanceClient"

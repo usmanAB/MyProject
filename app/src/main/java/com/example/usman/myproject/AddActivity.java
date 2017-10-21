@@ -25,6 +25,7 @@ import java.util.Date;
 
 public class AddActivity extends AppCompatActivity {
 
+    public static final String ADD_CLIENT_ACTION = "ADD_CLIENT_ACTION";
     private EditText lastnameEditText, firstNameEditText, mailEditText;
     private static final String TAG = "AddActivity";
     private RadioGroup rg1;
@@ -105,6 +106,11 @@ public class AddActivity extends AppCompatActivity {
         c.setLastname(lastname);
         c.setAge(calendar.getTime());
         Client.setClient(c);
+
+        sendBroadcast(new Intent(ADD_CLIENT_ACTION));
+
+        finish();
+
 
     }
     public void onRadioButtonClick(View view) {
