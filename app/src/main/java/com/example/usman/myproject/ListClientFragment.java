@@ -63,6 +63,7 @@ public class ListClientFragment extends ListFragment {
 
         if (listener!=null){
             listener.onClientSelected(position);
+
         }
 
     }

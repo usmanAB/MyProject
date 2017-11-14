@@ -22,11 +22,16 @@ import java.util.Date;
 public class DetailsClientFragment extends Fragment {
 
     private TextView nom;
+    private TextView prenom;
+    private TextView naissanceClient;
     private Client client;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_details_client,container,true);
         nom = view.findViewById(R.id.name_fragment);
+        prenom = view.findViewById(R.id.prenom);
+        naissanceClient = view.findViewById(R.id.naissanceClient);
+
         setHasOptionsMenu(true);
         //nom.setText("test");
 
@@ -36,8 +41,10 @@ public class DetailsClientFragment extends Fragment {
 
     public void updateClient(int id){
         client = Client.getClient().get(id);
-        String name = client.getLastname();
-        nom.setText("toto");
+        String name = client.getFirstname();
+        nom.setText(name);
+        prenom.setText(client.getLastname());
+        naissanceClient.setText(String.valueOf(client.getAge()));
 /*
         Date birthdate = client.getAge();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -52,13 +59,15 @@ public class DetailsClientFragment extends Fragment {
 
 
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.action_delete){
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
             builder.setTitle("Confirmation");
             builder.setMessage("Voulez-vous vraiment supprimer ?");
-            builder.setNegativeButton("Oui", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton("Oui",new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
