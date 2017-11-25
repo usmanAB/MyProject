@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="PRENOM_NOM"
+        android:entries="@array/settings_list_clients_text"
+        android:entryValues="@array/settings_list_clients_values"
+        android:key="preference_key"
+        android:title="Mode affichage" />
+</PreferenceScreen>

@@ -7,4 +7,16 @@
         android:icon="@android:drawable/ic_input_add"
         android:title="Ajouter"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="?attr/actionModeSelectAllDrawable"
+        android:title="Settings"
+        app:showAsAction="never" />
+
 </menu>

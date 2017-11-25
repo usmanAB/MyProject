@@ -1,9 +1,12 @@
 package com.example.usman.myproject;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -13,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.usman.myproject.model.Client;
@@ -25,19 +29,40 @@ public class DetailsClientFragment extends Fragment {
     private TextView prenom;
     private TextView naissanceClient;
     private Client client;
+    private ImageView image;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_details_client,container,true);
         nom = view.findViewById(R.id.name_fragment);
         prenom = view.findViewById(R.id.prenom);
         naissanceClient = view.findViewById(R.id.naissanceClient);
+        image = (ImageView) view.findViewById(R.id.customImage);
+
+        image.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,666);
+            }
+        });
 
         setHasOptionsMenu(true);
         //nom.setText("test");
 
+
+
+
         return view;
     }
 
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode==666 && resultCode == Activity.RESULT_OK){
+            Bitmap bitmap = data.getParcelableExtra("data");
+            image.setImageBitmap(bitmap);
+        }
+    }
 
     public void updateClient(int id){
         client = Client.getClient().get(id);

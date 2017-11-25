@@ -29,7 +29,8 @@
             android:name=".DetailsClientFragment"
             android:label="@string/title_activity_details"
             android:theme="@style/AppTheme" />
-        <activity android:name=".DetailsClientActivity"></activity>
+        <activity android:name=".DetailsClientActivity" />
+        <activity android:name=".SettingActivity"></activity>
     </application>
 
 </manifest>

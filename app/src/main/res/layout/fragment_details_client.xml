@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.usman.myproject.DetailsClientFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
+
 
     <TextView
         android:id="@+id/name_fragment"
@@ -19,6 +21,14 @@
         android:layout_height="wrap_content"
         android:text="@string/firstname"
         />
+
+    <ImageView
+        android:id="@+id/customImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:layout_weight="0.17" />
+
     <TextView
         android:id="@+id/naissanceClient"
         android:layout_width="match_parent"

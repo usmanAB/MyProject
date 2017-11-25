@@ -79,6 +79,13 @@ public class ListClientFragment extends ListFragment {
             Intent intent = new Intent(getActivity(),AddActivity.class);
             startActivity(intent);
         }
+        else if(item.getItemId() == R.id.action_settings){
+            Intent intent = new Intent(getActivity(),SettingActivity.class);
+            startActivity(intent);
+        }else if(item.getItemId() == R.id.action_refresh){
+            getActivity().startService(item);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }

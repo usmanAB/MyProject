@@ -31,4 +31,15 @@
     <string name="add_date">Ajouter date</string>
     <string name="lastname">Lastname</string>
     <string name="firstname">firstname</string>
+
+    <string-array name="settings_list_clients_text">
+        <item>Prénom Nom</item>
+        <item>Nom prénom</item>
+    </string-array>
+
+    <string-array name="settings_list_clients_values">
+        <item>Prénom Nom</item>
+        <item>Nom prénom</item>
+    </string-array>
+
 </resources>
